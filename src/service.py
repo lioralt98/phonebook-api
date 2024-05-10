@@ -3,7 +3,7 @@ from config import settings
 
 from repositories import phone_number_repository, contact_repository
 from models.models import *
-from exceptions import is_model_present, is_type_present
+from exceptions import is_model_present
 
 engine = create_engine(f"postgresql://{settings.POSTGRRES_USER}:{settings.POSTGRES_PASSWORD}@{settings.POSTGRES_HOST}/{settings.POSTGRES_DATABASE}", echo=True)
 
@@ -55,7 +55,7 @@ class Service:
     
     async def get_phone_numbers_by_type(self, type: str):
         type = type.lower()
-        is_type_present(type)
+        PhoneNumberTypesEnum.contains(type)
         stmt = select(PhoneNumber).where(PhoneNumber.phone_number_type == type)
         res = self.session.exec(stmt)
         return res.all()
