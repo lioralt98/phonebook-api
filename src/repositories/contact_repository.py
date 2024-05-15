@@ -1,6 +1,6 @@
 from sqlmodel import select, Session
-from models.models import *
-from exceptions import is_model_present
+from ..models.models import *
+from ..exceptions import is_model_present
 
 class ContactRepository:
 

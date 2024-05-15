@@ -1,11 +1,11 @@
 from sqlmodel import create_engine, select
-from config import settings
 
-from repositories import phone_number_repository, contact_repository
-from models.models import *
-from exceptions import is_model_present
+from .config import settings
+from .repositories import phone_number_repository, contact_repository
+from .models.models import *
+from .exceptions import is_model_present
 
-engine = create_engine(f"postgresql://{settings.POSTGRRES_USER}:{settings.POSTGRES_PASSWORD}@{settings.POSTGRES_HOST}/{settings.POSTGRES_DATABASE}", echo=True)
+engine = create_engine(settings.POSTGRES_URL, echo=True)
 
 class Service:
 

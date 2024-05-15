@@ -4,8 +4,8 @@ from pydantic import AfterValidator, ValidationInfo
 from typing_extensions import Annotated
 from sqlmodel import Field, SQLModel, Relationship
 
-from enums import PhoneNumberTypesEnum
-from config import settings
+from ..enums import PhoneNumberTypesEnum
+from ..config import settings
 
 def inforce_phone_number_validity(v: str):
     if v.startswith("0"):
