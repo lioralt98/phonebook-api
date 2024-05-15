@@ -1,5 +1,5 @@
 from sqlmodel import Session
-from service import Service, engine
+from .service import Service, engine
 
 async def get_service():
     with Session(engine) as session:

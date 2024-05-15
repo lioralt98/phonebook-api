@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
-from models.models import *
-from utils import get_service
-from service import Service
+from ..models.models import *
+from ..utils import get_service
+from ..service import Service
 
 main_router = APIRouter()
 

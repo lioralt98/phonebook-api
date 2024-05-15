@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 
-from routers import contact_router, phone_number_router, main_router
+from .routers import contact_router, phone_number_router, main_router
 
 app = FastAPI()
 
